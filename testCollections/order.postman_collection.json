@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "2fc3d379-e79e-43d0-ad72-d2a1b8704f22",
+		"name": "order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19226474"
+	},
+	"item": [
+		{
+			"name": "create order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkNWIxMGRjLWY3M2EtNGNjNC1hZWM2LWJhN2VhOWU1NjBlOSIsImFkbWluIjp0cnVlLCJpYXQiOjE3MzIxMDAxNDl9.RFDIYYGhboZRYjpLpywzIhxCs833l1YtmhBoNyNeK0BPWXfekMt1Q9lBAYxButcmzTLQU4svi_YgEdpFd8h6yXrz4j8SYzJ7AlpnGg9h8Jp0ceprp2tP4UtP3xQgOxc18igvF0p1gp24UdVF5CtD0S5dfnUOGWoiqLqDrbPCOt1jDohAAiloKLk6OrsNyLD4fwY2Y45AJQZg-trNLx5okqRtz4jciFPs4R9U-Iro9RTpSq8BECItaEWFexx15IkYRz-eXILKyLtdNIbb0y_rJWEC0SZFMNRingmDADIDd1QFtpkBal-471npi-dA9TilpWDX7edkKqPL1UTpOCzvNWOPTmcDTbvVFR1X2_ojnm_EAbEjVHaKkhJzx7QnDoaUMQ9c-9lrniFCCKVr3z42uxYEImC7HF4k3867Q9iuySF8rwFvmkIbk8cIV1JzV04RTXrNEtJWbJ7BHal9vL1jUqsaG6fZFLLn58mmmqkADXJuy5_7OiBT24FszvfkXX9ZaqegV-VOHWpOdxnCERG5CjBkWucl0utQKLUm8kx7CDCHdL93-Y2K-rw1rmKJDu9qLsbCy9_LuFWVSRs6rXy7C6tTOX5mmksACNXrI60NVvmiOmxc2U1KuCPz0QbR-dLvnTPHx0ubO_ODLjxmRnTMBib-LIdT8LWOPT9kC53Hgjk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/order/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"order",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order own orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkNWIxMGRjLWY3M2EtNGNjNC1hZWM2LWJhN2VhOWU1NjBlOSIsImFkbWluIjp0cnVlLCJpYXQiOjE3MzIxMDAxNDl9.RFDIYYGhboZRYjpLpywzIhxCs833l1YtmhBoNyNeK0BPWXfekMt1Q9lBAYxButcmzTLQU4svi_YgEdpFd8h6yXrz4j8SYzJ7AlpnGg9h8Jp0ceprp2tP4UtP3xQgOxc18igvF0p1gp24UdVF5CtD0S5dfnUOGWoiqLqDrbPCOt1jDohAAiloKLk6OrsNyLD4fwY2Y45AJQZg-trNLx5okqRtz4jciFPs4R9U-Iro9RTpSq8BECItaEWFexx15IkYRz-eXILKyLtdNIbb0y_rJWEC0SZFMNRingmDADIDd1QFtpkBal-471npi-dA9TilpWDX7edkKqPL1UTpOCzvNWOPTmcDTbvVFR1X2_ojnm_EAbEjVHaKkhJzx7QnDoaUMQ9c-9lrniFCCKVr3z42uxYEImC7HF4k3867Q9iuySF8rwFvmkIbk8cIV1JzV04RTXrNEtJWbJ7BHal9vL1jUqsaG6fZFLLn58mmmqkADXJuy5_7OiBT24FszvfkXX9ZaqegV-VOHWpOdxnCERG5CjBkWucl0utQKLUm8kx7CDCHdL93-Y2K-rw1rmKJDu9qLsbCy9_LuFWVSRs6rXy7C6tTOX5mmksACNXrI60NVvmiOmxc2U1KuCPz0QbR-dLvnTPHx0ubO_ODLjxmRnTMBib-LIdT8LWOPT9kC53Hgjk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/order/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"order",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkNWIxMGRjLWY3M2EtNGNjNC1hZWM2LWJhN2VhOWU1NjBlOSIsImFkbWluIjp0cnVlLCJpYXQiOjE3MzIxMDAxNDl9.RFDIYYGhboZRYjpLpywzIhxCs833l1YtmhBoNyNeK0BPWXfekMt1Q9lBAYxButcmzTLQU4svi_YgEdpFd8h6yXrz4j8SYzJ7AlpnGg9h8Jp0ceprp2tP4UtP3xQgOxc18igvF0p1gp24UdVF5CtD0S5dfnUOGWoiqLqDrbPCOt1jDohAAiloKLk6OrsNyLD4fwY2Y45AJQZg-trNLx5okqRtz4jciFPs4R9U-Iro9RTpSq8BECItaEWFexx15IkYRz-eXILKyLtdNIbb0y_rJWEC0SZFMNRingmDADIDd1QFtpkBal-471npi-dA9TilpWDX7edkKqPL1UTpOCzvNWOPTmcDTbvVFR1X2_ojnm_EAbEjVHaKkhJzx7QnDoaUMQ9c-9lrniFCCKVr3z42uxYEImC7HF4k3867Q9iuySF8rwFvmkIbk8cIV1JzV04RTXrNEtJWbJ7BHal9vL1jUqsaG6fZFLLn58mmmqkADXJuy5_7OiBT24FszvfkXX9ZaqegV-VOHWpOdxnCERG5CjBkWucl0utQKLUm8kx7CDCHdL93-Y2K-rw1rmKJDu9qLsbCy9_LuFWVSRs6rXy7C6tTOX5mmksACNXrI60NVvmiOmxc2U1KuCPz0QbR-dLvnTPHx0ubO_ODLjxmRnTMBib-LIdT8LWOPT9kC53Hgjk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/order/cancel/17728fdc-4ae1-49ac-bf7c-f784270073d5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"order",
+						"cancel",
+						"17728fdc-4ae1-49ac-bf7c-f784270073d5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkNWIxMGRjLWY3M2EtNGNjNC1hZWM2LWJhN2VhOWU1NjBlOSIsImFkbWluIjp0cnVlLCJpYXQiOjE3MzIxMDAxNDl9.RFDIYYGhboZRYjpLpywzIhxCs833l1YtmhBoNyNeK0BPWXfekMt1Q9lBAYxButcmzTLQU4svi_YgEdpFd8h6yXrz4j8SYzJ7AlpnGg9h8Jp0ceprp2tP4UtP3xQgOxc18igvF0p1gp24UdVF5CtD0S5dfnUOGWoiqLqDrbPCOt1jDohAAiloKLk6OrsNyLD4fwY2Y45AJQZg-trNLx5okqRtz4jciFPs4R9U-Iro9RTpSq8BECItaEWFexx15IkYRz-eXILKyLtdNIbb0y_rJWEC0SZFMNRingmDADIDd1QFtpkBal-471npi-dA9TilpWDX7edkKqPL1UTpOCzvNWOPTmcDTbvVFR1X2_ojnm_EAbEjVHaKkhJzx7QnDoaUMQ9c-9lrniFCCKVr3z42uxYEImC7HF4k3867Q9iuySF8rwFvmkIbk8cIV1JzV04RTXrNEtJWbJ7BHal9vL1jUqsaG6fZFLLn58mmmqkADXJuy5_7OiBT24FszvfkXX9ZaqegV-VOHWpOdxnCERG5CjBkWucl0utQKLUm8kx7CDCHdL93-Y2K-rw1rmKJDu9qLsbCy9_LuFWVSRs6rXy7C6tTOX5mmksACNXrI60NVvmiOmxc2U1KuCPz0QbR-dLvnTPHx0ubO_ODLjxmRnTMBib-LIdT8LWOPT9kC53Hgjk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/order/17728fdc-4ae1-49ac-bf7c-f784270073d5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"order",
+						"17728fdc-4ae1-49ac-bf7c-f784270073d5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finish order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkNWIxMGRjLWY3M2EtNGNjNC1hZWM2LWJhN2VhOWU1NjBlOSIsImFkbWluIjp0cnVlLCJpYXQiOjE3MzIxMDAxNDl9.RFDIYYGhboZRYjpLpywzIhxCs833l1YtmhBoNyNeK0BPWXfekMt1Q9lBAYxButcmzTLQU4svi_YgEdpFd8h6yXrz4j8SYzJ7AlpnGg9h8Jp0ceprp2tP4UtP3xQgOxc18igvF0p1gp24UdVF5CtD0S5dfnUOGWoiqLqDrbPCOt1jDohAAiloKLk6OrsNyLD4fwY2Y45AJQZg-trNLx5okqRtz4jciFPs4R9U-Iro9RTpSq8BECItaEWFexx15IkYRz-eXILKyLtdNIbb0y_rJWEC0SZFMNRingmDADIDd1QFtpkBal-471npi-dA9TilpWDX7edkKqPL1UTpOCzvNWOPTmcDTbvVFR1X2_ojnm_EAbEjVHaKkhJzx7QnDoaUMQ9c-9lrniFCCKVr3z42uxYEImC7HF4k3867Q9iuySF8rwFvmkIbk8cIV1JzV04RTXrNEtJWbJ7BHal9vL1jUqsaG6fZFLLn58mmmqkADXJuy5_7OiBT24FszvfkXX9ZaqegV-VOHWpOdxnCERG5CjBkWucl0utQKLUm8kx7CDCHdL93-Y2K-rw1rmKJDu9qLsbCy9_LuFWVSRs6rXy7C6tTOX5mmksACNXrI60NVvmiOmxc2U1KuCPz0QbR-dLvnTPHx0ubO_ODLjxmRnTMBib-LIdT8LWOPT9kC53Hgjk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/order/finish/17728fdc-4ae1-49ac-bf7c-f784270073d5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"order",
+						"finish",
+						"17728fdc-4ae1-49ac-bf7c-f784270073d5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

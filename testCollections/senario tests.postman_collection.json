@@ -1,0 +1,1016 @@
+{
+	"info": {
+		"_postman_id": "4779aaf0-0db3-47ef-ab8b-08e92f66f5fa",
+		"name": "senario tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19226474"
+	},
+	"item": [
+		{
+			"name": "register as normal user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"normal@gmil.com\",\r\n    \"password\":\"asd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register as normal again",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 409\", function () {\r",
+							"  pm.response.to.have.status(409);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"normal@gmil.com\",\r\n    \"password\":\"asd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login as  normal  wrong password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"normal@gmil.com\",\r\n    \"password\":\"wrong\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login as  normal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.collectionVariables.set(\"normal_token\", pm.response.json().token);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"normal@gmil.com\",\r\n    \"password\":\"asd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login as  admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.collectionVariables.set(\"admin_token\", pm.response.json().token);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"asd@gmail.com\",\r\n    \"password\":\"asd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create products as admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"name\": \"asd\",\r\n            \"price\": 4529.6,\r\n            \"stock\":400\r\n        },\r\n        {\r\n            \"name\": \"asd2\",\r\n            \"price\": 4529.6,\r\n            \"stock\":400\r\n        },\r\n        {\r\n            \"name\": \"as3d\",\r\n            \"price\": 4529.6,\r\n            \"stock\":400\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get produtcts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"products\", pm.response.json());\r",
+							"\r",
+							"var productIds = pm.response.json().map((product, index) => {\r",
+							"    pm.collectionVariables.set(`productId_${index + 1}`, product.productId);\r",
+							"    pm.collectionVariables.set(\"id_\"+product.productId, product.stock);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if body.*.stock is less than productstock\", function () {\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.log(jsonData.currentCart)\r",
+							"    pm.collectionVariables.set(\"currentCart\", jsonData.currentCart);\r",
+							"    jsonData.currentCart.map(x => {\r",
+							"        var productstock = pm.collectionVariables.get(\"id_\" + x.productId);\r",
+							"    \r",
+							"        pm.expect(productstock >= x.quantity).to.be.true;\r",
+							"    })\r",
+							"\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"productId\": \"{{productId_1}}\",\r\n            \"quantity\": 3\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/cart/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains currentCart\", function () {\r",
+							"    var currentCart = pm.response.json().currentCart;\r",
+							"    console.log(currentCart)\r",
+							"    console.log(pm.collectionVariables.get(\"currentCart\"))\r",
+							"    pm.expect(currentCart).to.eql(pm.collectionVariables.get(\"currentCart\"));\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/cart/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if body.order.orderProducts.0.quantity exists\", function () {\r",
+							"    var orderedQuantitiy = pm.response.json().order.orderProducts[0].quantity\r",
+							"    pm.expect(pm.response.json().order.orderProducts[0].quantity).to.exist;\r",
+							"\r",
+							"    pm.collectionVariables.set(\"orderedQuantitiy\", orderedQuantitiy);\r",
+							"    pm.collectionVariables.set(\"orderId\", pm.response.json().order.id);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/order/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"order",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains currentCart\", function () {\r",
+							"    var currentCart = pm.response.json().currentCart;\r",
+							"    pm.expect(currentCart.length).to.eql(0);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/cart/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get produtcts  check stocks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"check stock\", function () {\r",
+							"    var productId = pm.collectionVariables.get(\"productId_1\");\r",
+							"    var productOldStock = pm.collectionVariables.get(\"id_\" + productId)\r",
+							"    var orderedQuantitiy = pm.collectionVariables.get(\"orderedQuantitiy\");\r",
+							"    var currentProduct = pm.response.json().find(x => x.productId === productId)\r",
+							"    var productNewStock = currentProduct.stock\r",
+							"    console.log(\"productOldStock\", productOldStock)\r",
+							"    console.log(\"orderedQuantitiy\", orderedQuantitiy)\r",
+							"    console.log(\"productNewStock\", productNewStock)\r",
+							"\r",
+							"    pm.expect(productOldStock === orderedQuantitiy + productNewStock).to.be.true\r",
+							"\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel order Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/order/cancel/{{orderId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"order",
+						"cancel",
+						"{{orderId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get produtcts  check stocks after cancel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"check stock\", function () {\r",
+							"    var productId = pm.collectionVariables.get(\"productId_1\");\r",
+							"    var productOldStock = pm.collectionVariables.get(\"id_\" + productId)\r",
+							" \r",
+							"    var currentProduct = pm.response.json().find(x => x.productId === productId)\r",
+							"    var productNewStock = currentProduct.stock\r",
+							" \r",
+							"\r",
+							"    pm.expect(productOldStock === productNewStock).to.be.true\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{normal_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "productid_${index + 1}",
+			"value": ""
+		},
+		{
+			"key": "productId_${index + 1}",
+			"value": ""
+		},
+		{
+			"key": "id_1c0b1c64-fcbf-4f21-a000-04cfc7179dc7",
+			"value": ""
+		},
+		{
+			"key": "id_a8aa5a81-21d6-4a74-8f35-f32782bf4ab6",
+			"value": ""
+		},
+		{
+			"key": "id_8f013953-f814-405a-880b-58286445723c",
+			"value": ""
+		},
+		{
+			"key": "id_8e1070c3-9462-4653-9b69-d75ddc9774eb",
+			"value": ""
+		},
+		{
+			"key": "id_91219271-4d2d-417f-913b-66d18d340ec7",
+			"value": ""
+		},
+		{
+			"key": "productId_1",
+			"value": ""
+		},
+		{
+			"key": "productId_2",
+			"value": ""
+		},
+		{
+			"key": "productId_3",
+			"value": ""
+		},
+		{
+			"key": "productId_4",
+			"value": ""
+		},
+		{
+			"key": "productId_5",
+			"value": ""
+		},
+		{
+			"key": "currentCart",
+			"value": ""
+		},
+		{
+			"key": "products",
+			"value": ""
+		},
+		{
+			"key": "orderedQuantitiy",
+			"value": ""
+		},
+		{
+			"key": "orderId",
+			"value": ""
+		},
+		{
+			"key": "normal_token",
+			"value": ""
+		},
+		{
+			"key": "admin_token",
+			"value": ""
+		},
+		{
+			"key": "productId_6",
+			"value": ""
+		},
+		{
+			"key": "id_571fb9f1-0591-4e02-b54f-ca07f2df164d",
+			"value": ""
+		},
+		{
+			"key": "productId_7",
+			"value": ""
+		},
+		{
+			"key": "id_5798d744-cf5a-4189-9f9b-439d81fcd18c",
+			"value": ""
+		},
+		{
+			"key": "productId_8",
+			"value": ""
+		},
+		{
+			"key": "id_a4046091-5fa9-42f9-ac00-55072649cc3a",
+			"value": ""
+		},
+		{
+			"key": "productId_9",
+			"value": ""
+		},
+		{
+			"key": "id_9dfa88e3-cb9f-47d3-842b-154ba472cfef",
+			"value": ""
+		},
+		{
+			"key": "productId_10",
+			"value": ""
+		},
+		{
+			"key": "id_a933a2b8-d10e-4bbb-9861-45eeb1e998a4",
+			"value": ""
+		},
+		{
+			"key": "productId_11",
+			"value": ""
+		},
+		{
+			"key": "id_70e8dbaa-c871-422c-a4fa-aac560887033",
+			"value": ""
+		},
+		{
+			"key": "productId_12",
+			"value": ""
+		},
+		{
+			"key": "id_60c8f70b-aa4d-4493-8307-f2cfca212219",
+			"value": ""
+		},
+		{
+			"key": "productId_13",
+			"value": ""
+		},
+		{
+			"key": "id_1e988aa0-2bec-4953-b323-1ea8b298f81d",
+			"value": ""
+		},
+		{
+			"key": "productId_14",
+			"value": ""
+		},
+		{
+			"key": "id_352eb92e-d9cd-4365-a4e0-e6a73325de3b",
+			"value": ""
+		},
+		{
+			"key": "productId_15",
+			"value": ""
+		},
+		{
+			"key": "id_827c7544-7784-4f39-adb4-bd908c0f3a6c",
+			"value": ""
+		},
+		{
+			"key": "productId_16",
+			"value": ""
+		},
+		{
+			"key": "id_08801b76-dc73-4141-9788-a80b53036502",
+			"value": ""
+		},
+		{
+			"key": "productId_17",
+			"value": ""
+		},
+		{
+			"key": "id_8c3e1d87-427d-4eb6-8426-058c07cc3073",
+			"value": ""
+		},
+		{
+			"key": "productId_18",
+			"value": ""
+		},
+		{
+			"key": "id_f822c1e4-c92c-4b8e-a833-ab97baf91f0e",
+			"value": ""
+		},
+		{
+			"key": "productId_19",
+			"value": ""
+		},
+		{
+			"key": "id_7a59bd5b-bff4-451b-9b70-7228b5b9a90a",
+			"value": ""
+		},
+		{
+			"key": "productId_20",
+			"value": ""
+		},
+		{
+			"key": "id_62beaf74-3f47-4c99-9d00-3d91a4f903b8",
+			"value": ""
+		},
+		{
+			"key": "productId_21",
+			"value": ""
+		},
+		{
+			"key": "id_2409195a-5985-4ac0-8410-20caa43813ea",
+			"value": ""
+		},
+		{
+			"key": "productId_22",
+			"value": ""
+		},
+		{
+			"key": "id_d8f8c8c0-37c5-46bf-9015-823d0699424b",
+			"value": ""
+		},
+		{
+			"key": "productId_23",
+			"value": ""
+		},
+		{
+			"key": "id_1c0d0afd-cd83-4337-9e55-b4d3b0ea5f89",
+			"value": ""
+		},
+		{
+			"key": "id_1a1866a3-2314-4974-b849-bc01113d4d65",
+			"value": ""
+		},
+		{
+			"key": "id_acfbeaaf-bfb0-4e13-b426-a8a2e9d9882e",
+			"value": ""
+		},
+		{
+			"key": "id_93c4ceec-e8d4-4195-b671-cdc1d9e49a7e",
+			"value": ""
+		},
+		{
+			"key": "id_420e6d1d-710a-4036-9404-4e25b0594c6f",
+			"value": ""
+		},
+		{
+			"key": "id_0d1e5db9-0fbe-4199-95bc-609d6e619a23",
+			"value": ""
+		},
+		{
+			"key": "id_c2c9ec75-b8c9-44b4-9a2e-302fe889d5de",
+			"value": ""
+		}
+	]
+}
